@@ -1,0 +1,37 @@
+plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'java'
+    id 'maven-publish'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)  // Make sure you use Java 21
+    }
+}
+
+repositories {
+    maven {
+        name = "Fabric"
+        url = "https://maven.fabricmc.net/"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    // Minecraft dependency (Fabric Loom handles the version automatically)
+    minecraft "com.mojang:minecraft"
+
+    // Yarn mappings (for Minecraft 1.21.4)
+    mappings "net.fabricmc:yarn:1.21.4+build.6:v2"
+
+    // Fabric API
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.91.1+1.21.4"
+
+    // Loom (Fabric build tool)
+    compileOnly "net.fabricmc:fabric-loom:1.6.12"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "cosmikbutterflies",
+  "version": "1.0.0",
+  "name": "CosmikButterflies",
+  "description": "Adds butterflies that spawn during the day and fly around.",
+  "authors": ["C0smik"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.c0smik.cosmikbutterflies.CosmikButterfliesMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.10",
+    "fabric": "*",
+    "minecraft": "1.21.4"
+  }
+}
